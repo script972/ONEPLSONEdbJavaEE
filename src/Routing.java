@@ -23,7 +23,7 @@ public class Routing extends HttpServlet {
             case "/": request.getRequestDispatcher("/index.jsp").forward(request,response); break;
             case "/index/": request.getRequestDispatcher("/index.jsp").forward(request,response); break;
             case "/services/": request.getRequestDispatcher("/pages/services.jsp").forward(request,response); break;
-            default: request.getRequestDispatcher("/index.jsp");
+           // default: request.getRequestDispatcher("/index.jsp").forward(request,response);
 
         }
     }

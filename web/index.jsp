@@ -23,11 +23,11 @@
     <link rel="icon " href="img/favicon/favicon-blackBG.png" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <title>Pavlenko Construct</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon.png">
-    <link rel="stylesheet" href="style.css" >
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="../style.css" >
+    <link rel="stylesheet" href="../css/owl.carousel.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
 
 </head>
 <body>
@@ -35,9 +35,9 @@
 
   <header>
     <div class="Mainlogo">
-      <img src="img/logo/mainLogo.png" alt=""></div>
-    <div class="MobLogo"><img class="sqrLogo" src="img/home/sqrLogo.png" alt="" >
-      <img class="lineLogo" src="img/home/lineLogo.png" alt="" >
+      <img src="../img/logo/mainLogo.png" alt=""></div>
+    <div class="MobLogo"><img class="sqrLogo" src="../img/home/sqrLogo.png" alt="" >
+      <img class="lineLogo" src="../img/home/lineLogo.png" alt="" >
     </div>
 
       <%@include file="WEB-INF/jspf/menu.jsp" %>
