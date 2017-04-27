@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@ page import="beans.Person" %>
+
 
 <%@ page import="database.TestConnection" %>
 <%@ page import="beans.Article" %>
@@ -43,8 +43,10 @@
     <div class="MobLogo"><img class="sqrLogo" src="img/home/sqrLogo.png" alt="" >
       <img class="lineLogo" src="img/home/lineLogo.png" alt="" >
     </div>
+<%--
 
       <%@include file="WEB-INF/jspf/menu.jsp" %>
+--%>
 
   </header>
   <div class="banerBack">
