@@ -1,7 +1,11 @@
-<%@ page import="server.ServeletsPerson.ShowPersonServlet" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page import="beans.Person" %>
-<%@ page import="server.ServeletsArticle.ShowArticle" %>
-<%@ page import="beans.Article" %><%--
+
+<%@ page import="database.TestConnection" %>
+<%@ page import="beans.Article" %>
+<%@ page import="manipulate.ArticleList" %>
+<%--
   Created by IntelliJ IDEA.
   User: script972
   Date: 09.03.2017
@@ -23,11 +27,11 @@
     <link rel="icon " href="img/favicon/favicon-blackBG.png" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <title>Pavlenko Construct</title>
-    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon.png">
-    <link rel="stylesheet" href="../style.css" >
-    <link rel="stylesheet" href="../css/owl.carousel.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" >
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 
 </head>
 <body>
@@ -35,9 +39,9 @@
 
   <header>
     <div class="Mainlogo">
-      <img src="../img/logo/mainLogo.png" alt=""></div>
-    <div class="MobLogo"><img class="sqrLogo" src="../img/home/sqrLogo.png" alt="" >
-      <img class="lineLogo" src="../img/home/lineLogo.png" alt="" >
+      <img src="img/logo/mainLogo.png" alt=""></div>
+    <div class="MobLogo"><img class="sqrLogo" src="img/home/sqrLogo.png" alt="" >
+      <img class="lineLogo" src="img/home/lineLogo.png" alt="" >
     </div>
 
       <%@include file="WEB-INF/jspf/menu.jsp" %>
@@ -135,16 +139,8 @@
 
 
 
-
-  <%
-      int nn=0;
-    ShowArticle showArticle=new ShowArticle();
-    for (Article article :
-            showArticle.getArray()) {
-        nn++;
-        if(nn>3)
-            break;
-  %>
+<jsp:useBean id="frontArticleList" class="manipulate.ArticleList" scope="page"/>
+          <c:forEach var="article" items="${frontArticleList.articleList}">
 
         <div class="projectFront">
           <div class="image">
@@ -157,18 +153,18 @@
               </div> </a>
           </div>
           <div class="title">
-            <a href="services.jsp/"><p><%=article.getSubject() %></p>
+            <a href="services.jsp/"><p>${article.subject}</p>
             <%--  <p class="color">Doors</p></a>--%>
 
             <img src="img/home/textDivider.png" alt="divider Title" class="dividerTitle">
           </div>
           <div class="content">
-            <%= (article.getText()).substring(0,175)+"..." %>
+              ${article.text}
           </div>
           <div class="more"><a href=""><h4>Learn more</h4></a></div>
         </div>
-
-  <% } %>
+              <%--.substring(0,175)--%>
+          </c:forEach>
 
 
 
@@ -178,6 +174,7 @@
         <div class="footerExpert footerExpertM">
           <img src="img/home/manager-divider.png" class="divid" alt="devider">
           <p class="talkWithExpert">
+
             TALK WITH AN <span class="color" >EXPERT</span>
           </p>
           <p class="subExpert">Upgrade your with quality windows and doors.</p>

@@ -5,6 +5,8 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by script972 on 08.04.2017.
@@ -18,16 +20,17 @@ public class Database {
     public static Connection getConncetion(){
         try {
             ic=new InitialContext();
-            ds= (DataSource) ic.lookup("java:comp/env/jdbc/pavlenko3pool");
+            ds= (DataSource) ic.lookup("jdbc/pavlenko3pool");
             if(conn==null){
                 conn=ds.getConnection();
             }
         } catch (NamingException e) {
-            e.printStackTrace();
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, e);
         } catch (SQLException e) {
-            e.printStackTrace();
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, e);
         }
 
         return conn;
     }
+
 }

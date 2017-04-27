@@ -19,6 +19,9 @@ public class Article {
         this.auther = auther;
     }
 
+    public Article() {
+    }
+
     public int getId() {
         return id;
     }
