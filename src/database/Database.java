@@ -1,5 +1,6 @@
 package database;
 
+import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
@@ -14,7 +15,7 @@ import java.util.logging.Logger;
 public class Database {
     /*return Connection*/
     private static Connection conn;
-    private static InitialContext ic;
+    private static Context ic;
     private static DataSource ds;
 
     public static Connection getConncetion(){

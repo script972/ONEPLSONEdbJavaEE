@@ -18,13 +18,13 @@ public class ArticleList {
     private ArrayList<Article> articleList=new ArrayList<Article>();
 
     private ArrayList<Article> getArticle(){
-       /* Statement stmt=null;
+        Statement stmt=null;
         ResultSet rs=null;
-        Connection conn=null;*/
+        Connection conn=null;
         try {
-            Connection conn= Database.getConncetion();
-            Statement stmt=conn.createStatement();
-            ResultSet rs=stmt.executeQuery("SELECT * FROM article");
+             conn= Database.getConncetion();
+             stmt=conn.createStatement();
+             rs=stmt.executeQuery("SELECT * FROM article");
             while (rs.next()){
                 Article article=new Article();
                 article.setId(rs.getInt("id"));
@@ -38,7 +38,7 @@ public class ArticleList {
         } catch (SQLException e) {
             Logger.getLogger(ArticleList.class.getName()).log(Level.SEVERE, null, e);
         }
-        /*finally {
+        finally {
             try {
                 if(stmt!=null)
                     stmt.close();
@@ -49,8 +49,8 @@ public class ArticleList {
             } catch (SQLException e) {
                 Logger.getLogger(ArticleList.class.getName()).log(Level.SEVERE, null, e);
 
-            }*/
-        //}
+            }
+        }
 
         return articleList;
     }
