@@ -3,10 +3,7 @@ package manipulate;
 import beans.Article;
 import database.Database;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,7 +36,7 @@ public class ArticleList {
             Logger.getLogger(ArticleList.class.getName()).log(Level.SEVERE, null, e);
         }
         finally {
-            try {
+           /* try {
                 if(stmt!=null)
                     stmt.close();
                 if(conn!=null)
@@ -49,7 +46,7 @@ public class ArticleList {
             } catch (SQLException e) {
                 Logger.getLogger(ArticleList.class.getName()).log(Level.SEVERE, null, e);
 
-            }
+            }*/
         }
 
         return articleList;
@@ -60,5 +57,29 @@ public class ArticleList {
             return articleList;
         else
         return getArticle();
+    }
+
+    public Article getArticleById(String id){
+        Statement stmt=null;
+        ResultSet rs=null;
+        Connection conn=null;
+        try {
+            conn= Database.getConncetion();
+            PreparedStatement preparedStatement = conn.prepareStatement("SELECT * FROM article WHERE id=?");
+            preparedStatement.setInt(1, Integer.parseInt(id));
+            while (rs.next()){
+                Article article=new Article();
+                article.setId(rs.getInt("id"));
+                article.setSubject(rs.getString("subject"));
+                article.setText(rs.getString("text"));
+                article.setDate(rs.getDate("date").toString());
+                article.setAuther(rs.getString("auther"));
+                return article;
+            }
+
+        } catch (SQLException e) {
+            Logger.getLogger(ArticleList.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return null;
     }
 }

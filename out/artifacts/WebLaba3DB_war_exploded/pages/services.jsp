@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: script972
@@ -7,19 +8,22 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%@include file="../WEB-INF/jspf/HeaderFile.jsp"%>
+<%@include file="../WEB-INF/jspf/HeaderFile.jspf"%>
 
 
 
 <div class="content other">
     <div class="container">
         <div class="row">
-            <div class="titlePage"><h1><?php the_title();?></h1><br> <img src="../img/home/botLineWhite.png" alt="Divider" class="dividerTitle">
+            <div class="titlePage"><h1>Services</h1><br> <img src="../img/home/botLineWhite.png" alt="Divider" class="dividerTitle">
             </div>
         </div>
         <div class="row">
-            <?php  $slider=new WP_Query(array ('post_type'=>'Services'));  ?>
-            <?php  if ($slider->have_posts()): while($slider->have_posts()): $slider->the_post();?>
+
+
+            <jsp:useBean id="frontArticleList" class="manipulate.ArticleList" scope="page"/>
+
+            <c:forEach var="article" items="${frontArticleList.articleList}">
 
             <div class="projectFront">
                 <div class="image">
@@ -27,28 +31,22 @@
                     <?php the_post_thumbnail();?>
                     <a href="<?php the_permalink(); ?>">
                         <div class="backgroundPlus">
-                            <img src="<?php  bloginfo(template_url);?>/img/home/plus.png" alt="" class="pls">
+                            <img src="../img/home/plus.png" alt="" class="pls">
                             <!-- <div class="backpls"></div> -->
                         </div> </a>
                 </div>
                 <div class="title">
-                    <a href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p>
-                        <p class="color"><?php the_field("color_title"); ?></p></a>
+                    <a href="pages/services.jsp?services_id=${article.id}&${article.subject}"><p>${article.subject}</p></a>
+    <%--                    <p class="color"></p></a>--%>
 
                     <img src="../img/home/textDivider.png" alt="divider Title" class="dividerTitle">
                 </div>
                 <div class="content">
-                    <?php
-
-					 echo get_the_excerpt();
-					 ?>
+                    ${article.text.substring(0,175)}
                 </div>
 
             </div>
-            <?php endwhile; ?>
-            <?php else: ?>
-            <p> Services</p>
-            <?php endif; ?>
+            </c:forEach>
         </div>
 
 
@@ -115,4 +113,4 @@
     </div>
 </div>
 
-<%@include file="../WEB-INF/jspf/footer.jsp"%>
+<%@include file="../WEB-INF/jspf/footer.jspf"%>
