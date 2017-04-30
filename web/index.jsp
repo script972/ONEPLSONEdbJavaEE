@@ -154,21 +154,20 @@
           <div class="image">
             <div class="topLine"></div>
             <img src="img/home/post3.png" alt="">
-            <a href="">
+              <a href="pages/service.jsp?service_id=${article.id}&subject=${article.subject}">
               <div class="backgroundPlus">
                 <img src="img/home/plus.png" alt="" class="pls">
               </div> </a>
           </div>
           <div class="title">
               <a href="pages/service.jsp?service_id=${article.id}&subject=${article.subject}"><p>${article.subject}</p></a>
-
             <img src="img/home/textDivider.png" alt="divider Title" class="dividerTitle">
           </div>
           <div class="content">
               ${article.text.substring(0,175)}
 
           </div>
-          <div class="more"><a href="pages/service.jsp?services_id=${article.id}&${article.subject}"><h4>Learn more</h4></a></div>
+          <div class="more"> <a href="pages/service.jsp?service_id=${article.id}&subject=${article.subject}"><h4>Learn more</h4></a></div>
         </div>
               <%--.substring(0,175)--%>
           </c:forEach>

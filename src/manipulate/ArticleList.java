@@ -59,14 +59,15 @@ public class ArticleList {
         return getArticle();
     }
 
-    public Article getArticleById(String id){
+    public Article getArticleById(int id){
         Statement stmt=null;
         ResultSet rs=null;
         Connection conn=null;
         try {
             conn= Database.getConncetion();
             PreparedStatement preparedStatement = conn.prepareStatement("SELECT * FROM article WHERE id=?");
-            preparedStatement.setInt(1, Integer.parseInt(id));
+            preparedStatement.setInt(1, id);
+            rs=preparedStatement.executeQuery();
             while (rs.next()){
                 Article article=new Article();
                 article.setId(rs.getInt("id"));

@@ -29,14 +29,13 @@
                 <div class="image">
                     <div class="topLine"></div>
                     <?php the_post_thumbnail();?>
-                    <a href="<?php the_permalink(); ?>">
+                    <a href="pages/service.jsp?service_id=${article.id}&subject=${article.subject}">
                         <div class="backgroundPlus">
                             <img src="../img/home/plus.png" alt="" class="pls">
-                            <!-- <div class="backpls"></div> -->
                         </div> </a>
                 </div>
                 <div class="title">
-                    <a href="pages/services.jsp?services_id=${article.id}&${article.subject}"><p>${article.subject}</p></a>
+                    <a href="pages/service.jsp?service_id=${article.id}&subject=${article.subject}"> <p>${article.subject}</p></a>
     <%--                    <p class="color"></p></a>--%>
 
                     <img src="../img/home/textDivider.png" alt="divider Title" class="dividerTitle">
