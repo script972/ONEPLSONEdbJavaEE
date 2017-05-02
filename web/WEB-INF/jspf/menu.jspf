@@ -12,13 +12,13 @@
             </div>
             <div class="collapse navbar-collapse" id="responsive-menu">
                 <ul id="menu-menu" class="nav" >
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page liitem"><a href="/index/">Home</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page liitem"><a href="/WebLaba3DB_war_exploded/index.jsp">Home</a></li>
 
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page liitem"><a href="../pages/ourprojects/">Our Projects</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page liitem"><a href="/WebLaba3DB_war_exploded/pages/ourprojects.jsp">Our Projects</a></li>
 
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page liitem"><a href="../pages/services/">Our Services</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page liitem"><a href="/WebLaba3DB_war_exploded/pages/services.jsp">Our Services</a></li>
 
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page liitem"><a href="/pages/contact/">Contact me</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page liitem"><a href="/WebLaba3DB_war_exploded/pages/contact/">Contact me</a></li>
                 </ul>
 
             </div>

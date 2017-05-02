@@ -10,6 +10,7 @@ public class Article {
     String text;
     String date;
     String auther;
+    byte[] image;
 
     public Article(int id, String subject, String text, String date, String auther) {
         this.id = id;
@@ -20,6 +21,23 @@ public class Article {
     }
 
     public Article() {
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
+    public Article(int id, String subject, String text, String date, String auther, byte[] image) {
+        this.id = id;
+        this.subject = subject;
+        this.text = text;
+        this.date = date;
+        this.auther = auther;
+        this.image = image;
     }
 
     public int getId() {

@@ -29,6 +29,7 @@ public class ArticleList {
                 article.setText(rs.getString("text"));
                 article.setDate(rs.getDate("date").toString());
                 article.setAuther(rs.getString("auther"));
+                article.setImage(rs.getBytes("image"));
                 articleList.add(article);
             }
 
@@ -75,6 +76,7 @@ public class ArticleList {
                 article.setText(rs.getString("text"));
                 article.setDate(rs.getDate("date").toString());
                 article.setAuther(rs.getString("auther"));
+                article.setImage(rs.getBytes("image"));
                 return article;
             }
 

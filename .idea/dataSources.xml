@@ -14,6 +14,8 @@
         <property name="characterSetResults" value="utf8" />
         <property name="yearIsDateType" value="false" />
         <property name="createDatabaseIfNotExist" value="true" />
+        <property name="maxAllowedPacket" value="15000000" />
+        <property name="blobSendChunkSize" value="2548576" />
       </driver-properties>
     </data-source>
   </component>

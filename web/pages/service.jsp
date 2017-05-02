@@ -35,7 +35,8 @@
 
             <div class="posts-block">
                 <div class="divider-line"></div>
-                <img src="../img/home/post3.png" alt="" style="margin:auto;">
+                <img src="<%=request.getContextPath()%>/ShowImage?idImage=<%=genreID%>" alt="">
+
 
                 <div class="general-text-block">
                     <div class="posts-block-text">
