@@ -1,8 +1,11 @@
 package beans;
 
+import javax.annotation.ManagedBean;
+
 /**
  * Created by script972 on 09.03.2017.
  */
+@ManagedBean
 public class Article {
 
     int id;

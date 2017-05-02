@@ -153,7 +153,10 @@
         <div class="projectFront">
           <div class="image">
             <div class="topLine"></div>
-            <img src="img/home/post3.png" alt="">
+
+              <img src="<%=request.getContextPath()%>/ShowImage?idImage=${article.id}" alt="">
+
+
               <a href="pages/service.jsp?service_id=${article.id}&subject=${article.subject}">
               <div class="backgroundPlus">
                 <img src="img/home/plus.png" alt="" class="pls">
